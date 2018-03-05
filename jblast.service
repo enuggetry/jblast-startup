@@ -1,0 +1,14 @@
+[Unit]
+Description=JBlast/Galaxy startup
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/centos/jblast-startup/jblast-startup.js
+ExecStop=/home/centos/jblast-startup/jblast-stopservice.js
+TimeoutStartSec=0
+User=root
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
