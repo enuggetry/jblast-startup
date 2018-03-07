@@ -19,6 +19,8 @@ sudo systemctl reboot (reboot system)
 ```
 
 ### redis on amazon linux
+```
 sudo yum-config-manager --enable epel
 sudo yum install redis
 sudo redis-server /etc/redis.conf
+```
