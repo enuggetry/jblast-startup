@@ -14,6 +14,6 @@ execa.shell('sh run.sh').then(result => {
 sleep(10000);
 
 process.chdir('/home/centos/jbserver'); 
-execa.shell('sails lift').then(result => {
+execa.shell('sails lift > jblast-startup.log').then(result => {
     console.log(result.stdout);
 });
