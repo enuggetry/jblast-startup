@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here if you don't
+# want to do the full Sys V style init stuff.
+
+touch /var/lock/subsys/local
+
+# start jblast components
+
+# start redis
+redis-server /etc/redis.conf > /home/ec2-user/startup.log &
+
+# start galaxy
+cd /home/ec2-user/galaxy
+sh run.sh > /home/ec2-user/galaxy.log &
+
+sleep 10
+
+# start jbserver
+cd /home/ec2-user/jbserver
+sails lift > /home/ec2-user/jbserver.log &
+
+
