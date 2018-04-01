@@ -9,16 +9,16 @@ touch /var/lock/subsys/local
 # start jblast components
 
 # start redis
-redis-server /etc/redis.conf > /home/ec2-user/startup.log &
+redis-server /etc/redis.conf > /home/ec2-user/redis-start.log &
 
 # start galaxy
 cd /home/ec2-user/galaxy
-sh run.sh > /home/ec2-user/galaxy.log &
+sh run.sh > /home/ec2-user/galaxy-start.log &
 
 sleep 10
 
-# start jbserver
-cd /home/ec2-user/jbserver
-sails lift > /home/ec2-user/jbserver.log &
+# start jbconnect
+cd /home/ec2-user/jbconnect
+sails lift > /home/ec2-user/jbconnect-start.log &
 
 

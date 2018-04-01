@@ -1,0 +1,31 @@
+# jblast-startup
+
+To activate (amazon linux jblastdemo):
+
+sudo cp rc.local /etc
+
+
+### install files (for centos)
+```
+git clone http://github.com/enuggetry/jblast-startup
+cd jblast-startup
+sudo npm install -g
+```
+
+This will install `jblast.service` into `/lib/systemd/system`.
+
+### install service`
+```
+sudo systemctl daemon-reload (reload the scripts)
+sudo systemctl enable jblast (start upon boot)
+sudo systemctl start jblast (start)
+sudo systemctl stop jblast (stop)
+sudo systemctl reboot (reboot system)
+```
+
+### redis on amazon linux
+```
+sudo yum-config-manager --enable epel
+sudo yum install redis
+sudo redis-server /etc/redis.conf
+```
