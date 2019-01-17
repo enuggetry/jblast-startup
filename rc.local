@@ -21,4 +21,6 @@ sleep 10
 cd /home/ec2-user/jbconnect
 sails lift > /home/ec2-user/jbconnect-start.log &
 
+exit 0
+
 
