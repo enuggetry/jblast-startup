@@ -1,0 +1,16 @@
+[Unit]
+Description=JBConnect service
+After=network.target galaxy.service redis.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=ericiam
+ExecStartPre=/bin/sleep 30
+WorkingDirectory=/home/ericiam/jbconnectg
+ExecStart=/usr/bin/env sails lift
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Galaxy service
+After=network.target
+StartLimitIntervalSec=0
+
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ericiam
+ExecStart=/usr/bin/env sh /home/ericiam/galaxy/run.sh
+
+[Install]
+WantedBy=multi-user.target
