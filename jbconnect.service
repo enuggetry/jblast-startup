@@ -1,7 +1,8 @@
 [Unit]
 Description=JBConnect service
-After=network.target galaxy.service redis.service
+After=network.target galaxy.service redis.service notify-email@.service
 StartLimitIntervalSec=0
+OnFailure=notify-email@%i.service
 
 [Service]
 Type=simple

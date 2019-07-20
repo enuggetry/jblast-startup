@@ -1,0 +1,9 @@
+[Unit]
+Description=Sent email 
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '/bin/systemctl status %i | /bin/mailx -Ssendwait -s "[SYSTEMD_%i] JBlast Fail" ericiam@berkeley.edu'
+
+[Install]
+WantedBy=multi-user.target
