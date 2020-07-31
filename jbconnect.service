@@ -9,9 +9,11 @@ Type=simple
 Restart=always
 RestartSec=10
 User=ericiam
-ExecStartPre=/bin/sleep 30
-WorkingDirectory=/home/ericiam/jbconnectg
-ExecStart=/usr/bin/env sails lift
+ExecStartPre=/bin/sleep 5
+WorkingDirectory=/home/ericiam/jbconnect
+ExecStart=/bin/bash -lc 'sails lift'
+KillMode=process
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
